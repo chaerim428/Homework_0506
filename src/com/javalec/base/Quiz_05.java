@@ -2,29 +2,28 @@ package com.javalec.base;
 
 import java.util.Scanner;
 
-public class Quiz_05 {
+public class Quiz_06 {
 
 	public static void main(String[] args) {
-		// 몇개의 숫자를 더할까요? 4
-		// 4개의 숫자를 입력하세요
-
-		// 합계 : 입력한 숫자의 합은 10 입니다.
+		/*
+		 * 몇 단계의 파라미드로 구성할까 ? : 5 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15
+		 */
 
 		Scanner scanner = new Scanner(System.in);
-		int input = 0;
+		int line = 0;
 		int sum = 0;
 
-		System.out.print("몇개의 숫자를 더할까요?");
-		input = scanner.nextInt();
+		System.out.print("몇 단계의 파라미드로 구성할까 ? : ");
+		line = scanner.nextInt();
 
-		int[] num = new int[input];
-
-		for (int i = 0; i < num.length; i++) {
-			System.out.print((i + 1) + "번째 숫자를 입력하세요 : ");
-			num[i] = scanner.nextInt();
-			sum += num[i];
+		for (int i = 1; i <= line; i++) {
+			for (int j = 1; j <= i; j++) {
+				sum += 1;
+				System.out.print(String.format("%3d", sum));
+			}
+			System.out.println();
 		}
-		System.out.println("입력한 숫자의 합은 " + sum + "입니다.");
+
 	}
 
 }
